@@ -1,0 +1,59 @@
+*,*::before,*::after{
+	box-sizing: border-box; /* easier to size */
+	font-family: Technology;
+	font-weight: normal;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background: #081a24;
+}
+.calculator-grid{
+	display: grid;/* grid of rows and columns */
+	justify-content: center;/* center */
+	align-content: center;/* aligns the data to the center */
+	min-height: 100vh;/* 100% of height */
+	grid-template-columns: repeat(4,100px); /* Columns going 2 repeat and will've 4 cols with 100px wide */
+	grid-template-rows: minmax(120px , auto) repeat(5, 100px); /* output screen can grow as much as we want minMax() */
+}
+.calculator-grid > button{ /* Select all the buttons */
+	cursor: pointer;
+	font-size: 2em;
+	border: 1px solid transparent;
+	outline: none;
+	background-color: #0c2834;
+	color: white;
+	transition: .5s;
+}
+.calculator-grid > button:hover{
+	background-color: #00d900;
+	color: #000;
+	transition: .5s;	
+}
+.calculator-grid .two{
+	background-color: #05affc;
+	grid-column: span 2;
+}
+.calculator-grid .one{
+	background: #ff2d78;
+	grid-column: span 2;
+}
+.output{
+	grid-column: 1 / -1; /* go from col 1 to last col */
+	background: #fff;
+	display: flex;/* easy 2 align */
+	align-items: flex-end;/* down the div */
+	justify-content: space-around;/* as much space between them as possible */
+	flex-direction: column;/* align vertically */
+	padding: 10px;
+	word-wrap: break-word;/* we are able to break our word */
+	word-break: break-all;/* we are able to break all words */
+}
+.output .prev{
+	color: grey;
+	font-size: 1.5rem;
+}
+.output .curr{
+	color: black;
+	font-size: 2.5rem;
+}
